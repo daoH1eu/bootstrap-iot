@@ -40,16 +40,16 @@ client.subscribe("home/dht11");
 
 // -------------------------------------------------CONNECT SQL---------------------------------------------
 var con = mysql.createConnection({
-    host: 'database-free.cizqdlsqmr26.us-east-2.rds.amazonaws.com',
-    port: '3306',
-    user: 'admin',
-    password: '12345678',
-    database: 'rdsDatabase'
-    // host: 'localhost',
-    // user: 'root',
-    // port: 3306,
-    // password: '1234',
-    // database: 'myDatabase'
+    // host: 'database-free.cizqdlsqmr26.us-east-2.rds.amazonaws.com',
+    // port: '3306',
+    // user: 'admin',
+    // password: '12345678',
+    // database: 'rdsDatabase'
+    host: 'localhost',
+    user: 'root',
+    port: 3306,
+    password: '1234',
+    database: 'myDatabase'
 });
 
 //---------------------------------------------CREATE TABLE in MySQL-------------------------------------------------
@@ -118,6 +118,7 @@ client.on('message', function (topic, message, packet) {//create a listener for 
                         lux_graph[i] = value.Lux;
                         i++;
                     })
+                    //may be
                     io.sockets.emit("server-update-graph", { date_graph, temp_graph, humi_graph, lux_graph });
                 });
             }
@@ -131,21 +132,21 @@ client.on('message', function (topic, message, packet) {//create a listener for 
 
 //----Socket-------------------------------------
 io.on('connection', function (socket) {
-    console.log(socket.id + " connected")
-    socket.on('disconnect', function () {
-        console.log(socket.id + " disconnected")
-    })
+    socket.on("disconnect", function()
+    {
+    });
 
-    socket.on("ledChange", function (data) {
+    socket.on("client-send-data", function (data) {
+        // console.log(data);
         if (data == "on") {
-            console.log('Bật LED')
-            client.publish(topic1, 'on');
+            console.log("Bật")
+            client.publish("led", 'on');
         }
         else {
-            console.log('Tắt LED')
-            client.publish(topic1, 'off');
+            console.log("Tắt")
+            client.publish("led", 'off');
         }
-    })
+    });
 
     con.query(checkTable, function (err, result, fields) {
         if (err) throw err;
@@ -161,8 +162,8 @@ io.on('connection', function (socket) {
                     m_time = value.Time.toString().slice(4, 24);
                     tempFulldata.push({ id: value.ID, time: m_time, temp: value.Temperature, humi: value.Humidity, lux: value.Lux })
                 })
-                io.sockets.emit('full_database', tempFulldata)
-            })
+                socket.emit('full_database', tempFulldata)
+            });
 
             //get 8 newest row data and push to chart
             var sql1 = "SELECT * FROM sensors ORDER BY ID DESC limit 8"
@@ -176,14 +177,13 @@ io.on('connection', function (socket) {
                     temp_graph[i] = value.Temperature;
                     lux_graph[i] = value.Lux;
                     i++;
-                })
-                io.sockets.emit("server-update-graph", { date_graph, temp_graph, humi_graph, lux_graph });
+                });
+                socket.emit("server-update-graph", { date_graph, temp_graph, humi_graph, lux_graph });
             });
         }
         else{
             console.log("Table doesn't exist, create a table");
             createTable()
-        }
-            
+        }   
     })
 })
