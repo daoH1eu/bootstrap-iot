@@ -40,16 +40,16 @@ client.subscribe("home/dht11");
 
 // -------------------------------------------------CONNECT SQL---------------------------------------------
 var con = mysql.createConnection({
-    // host: 'database-free.cizqdlsqmr26.us-east-2.rds.amazonaws.com',
-    // port: '3306',
-    // user: 'admin',
-    // password: '12345678',
-    // database: 'rdsDatabase'
-    host: 'localhost',
+    host: 'asian-database.cwjqhs6n9ucg.ap-southeast-1.rds.amazonaws.com',
+    port: '3306',
     user: 'root',
-    port: 3306,
-    password: '1234',
-    database: 'myDatabase'
+    password: '12345678',
+    database: 'rdsDatabase'
+    // host: 'localhost',
+    // user: 'root',
+    // port: 3306,
+    // password: '1234',
+    // database: 'myDatabase'
 });
 
 //---------------------------------------------CREATE TABLE in MySQL-------------------------------------------------
