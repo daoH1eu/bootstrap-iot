@@ -193,18 +193,18 @@ demo = {
 
     // },
 
-    showNotification: function(from, align) {
+    showNotification: function() {
         color = Math.floor((Math.random() * 4) + 1);
 
         $.notify({
-            icon: "nc-icon nc-app",
+            icon: "nc-icon nc-satisfied",
             message: "Welcome to <b>My Dashboard</b>"
         }, {
             type: type[color],
             timer: 8000,
             placement: {
-                from: from,
-                align: align
+                from: top,
+                align: middle
             }
         });
     }
