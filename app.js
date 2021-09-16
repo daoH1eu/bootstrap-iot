@@ -137,12 +137,12 @@ io.on('connection', function (socket) {
     });
 
     socket.on("client-send-data", function (data) {
-        // console.log(data);
+        console.log(data);
         if (data == "on") {
             console.log("Bật")
             client.publish("led", 'on');
         }
-        else {
+        else if (data == "off"){
             console.log("Tắt")
             client.publish("led", 'off');
         }

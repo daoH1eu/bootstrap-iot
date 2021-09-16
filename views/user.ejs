@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <!-- <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/new_logo.png"> -->
-    <link rel="icon" type="image/png" href="../assets/img/pngegg.png">
+    <link rel="icon" type="image/png" href="../assets/img/dog.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>My Dashboard</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
@@ -30,7 +30,7 @@
                 <div class="logo">
                     <a href="/" class="simple-text">
                         <i class="nc-icon nc-cloud-upload-94"></i>
-                        DASHBOARD IOT
+                        &nbsp; DASHBOARD IOT
                     </a>
                 </div>
                 <ul class="nav">
@@ -53,7 +53,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link">
+                        <a class="nav-link" href="/">
                             <i class="nc-icon nc-square-pin"></i>
                             <p id="RTC"> </p>
                         </a>
@@ -66,75 +66,77 @@
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/user">Control Center</a>
-                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://time.is"  target="_blank"">
+                    <!-- <div class="collapse navbar-collapse justify-content-end" id="navigation"> -->
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://time.is" target="_blank"">
                                     <p>
-                                        <b>Local time:</b>&nbsp;<span id="rtc"> </span>
-                                        <i class="nc-icon nc-square-pin"></i>
-                                    </p>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                                        <b>Local time:</b>&nbsp;<span id=" rtc"> </span>
+                                <i class="nc-icon nc-square-pin"></i>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- </div> -->
                 </div>
             </nav>
             <!-- End Navbar -->
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md">
-                            <div class="card">
-                                <div class="card-header">
-                                    <!-- <h4 class="card-title text-center"> -->
-                                    <p style="color:#333;font-size:150%;">
-                                        <b>Room - 1</b>
-                                    </p>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="switch-holder">
-                                                <div class="switch-label">
-                                                    <span>Thiết bị 1</span>
-                                                </div>
-                                                <div class="switch-toggle">
-                                                    <input type="checkbox" id="device1" onclick="checkState('device1')">
-                                                    <label for="device1"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="switch-holder">
-                                                <div class="switch-label">
-                                                    <span>Thiết bị 2</span>
-                                                </div>
-                                                <div class="switch-toggle">
-                                                    <input type="checkbox" id="device2">
-                                                    <label for="device2"></label>
+            <fieldset>
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <!-- <h4 class="card-title text-center"> -->
+                                        <p style="color:#333;font-size:150%;">
+                                            <b>Room - 1</b>
+                                        </p>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="switch-holder">
+                                                    <div class="switch-label">
+                                                        <span>Thiết bị 1</span>
+                                                    </div>
+                                                    <div class="switch-toggle">
+                                                        <input type="checkbox" id="device1" onclick="saveClickBox('#device1');get_button_status(id);">
+                                                        <label for="device1"></label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="switch-holder">
-                                                <div class="switch-label">
-                                                    <span>Thiết bị 3</span>
-                                                </div>
-                                                <div class="switch-toggle">
-                                                    <input type="checkbox" id="device3">
-                                                    <label for="device3"></label>
+                                            <div class="col-md-3">
+                                                <div class="switch-holder">
+                                                    <div class="switch-label">
+                                                        <span>Thiết bị 2</span>
+                                                    </div>
+                                                    <div class="switch-toggle">
+                                                        <input type="checkbox" id="device2" onclick="saveClickBox('#device2');">
+                                                        <label for="device2"></label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="switch-holder">
-                                                <div class="switch-label">
-                                                    <span>Thiết bị 4</span>
+                                            <div class="col-md-3">
+                                                <div class="switch-holder">
+                                                    <div class="switch-label">
+                                                        <span>Thiết bị 3</span>
+                                                    </div>
+                                                    <div class="switch-toggle">
+                                                        <input type="checkbox" id="device3" onclick="saveClickBox('#device3');">
+                                                        <label for="device3"></label>
+                                                    </div>
                                                 </div>
-                                                <div class="switch-toggle">
-                                                    <input type="checkbox" id="device4">
-                                                    <label for="device4"></label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="switch-holder">
+                                                    <div class="switch-label">
+                                                        <span>Thiết bị 4</span>
+                                                    </div>
+                                                    <div class="switch-toggle">
+                                                        <input type="checkbox" id="device4" onclick="saveClickBox('#device4');">
+                                                        <label for="device4"></label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -142,70 +144,72 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md">
-                            <div class="card">
-                                <div class="card-header">
-                                    <!-- <h4 class="card-title text-center"> -->
-                                    <p style="color:#333;font-size:150%;">
-                                        <b>Room - 2</b>
-                                    </p>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="switch-holder">
-                                                <div class="switch-label">
-                                                    <span>Thiết bị 1</span>
-                                                </div>
-                                                <div class="switch-toggle">
-                                                    <input type="checkbox" id="device1-room2"
-                                                        onclick="checkState('device1-room2')">
-                                                    <label for="device1-room2"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="switch-holder">
-                                                <div class="switch-label">
-                                                    <span>Thiết bị 2</span>
-                                                </div>
-                                                <div class="switch-toggle">
-                                                    <input type="checkbox" id="device2-room2">
-                                                    <label for="device2-room2"></label>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <!-- <h4 class="card-title text-center"> -->
+                                        <p style="color:#333;font-size:150%;">
+                                            <b>Room - 2</b>
+                                        </p>
+                                    </div>
+                                    <!-- <fieldset> -->
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="switch-holder">
+                                                    <div class="switch-label">
+                                                        <span>Thiết bị 1</span>
+                                                    </div>
+                                                    <div class="switch-toggle">
+                                                        <input type="checkbox" id="device1-room2"
+                                                            onclick="saveClickBox('#device2');get_button_status(id);" >
+                                                        <label for="device1-room2"></label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="switch-holder">
-                                                <div class="switch-label">
-                                                    <span>Thiết bị 3</span>
-                                                </div>
-                                                <div class="switch-toggle">
-                                                    <input type="checkbox" id="device3-room2">
-                                                    <label for="device3-room2"></label>
+                                            <div class="col-md-3">
+                                                <div class="switch-holder">
+                                                    <div class="switch-label">
+                                                        <span>Thiết bị 2</span>
+                                                    </div>
+                                                    <div class="switch-toggle">
+                                                        <input type="checkbox" id="device2-room2" onclick="saveClickBox('#device2-room2');">
+                                                        <label for="device2-room2"></label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="switch-holder">
-                                                <div class="switch-label">
-                                                    <span>Thiết bị 4</span>
+                                            <div class="col-md-3">
+                                                <div class="switch-holder">
+                                                    <div class="switch-label">
+                                                        <span>Thiết bị 3</span>
+                                                    </div>
+                                                    <div class="switch-toggle">
+                                                        <input type="checkbox" id="device3-room2" onclick="saveClickBox('#device3-room2');">
+                                                        <label for="device3-room2"></label>
+                                                    </div>
                                                 </div>
-                                                <div class="switch-toggle">
-                                                    <input type="checkbox" id="device4-room2">
-                                                    <label for="device4-room2"></label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="switch-holder">
+                                                    <div class="switch-label">
+                                                        <span>Thiết bị 4</span>
+                                                    </div>
+                                                    <div class="switch-toggle">
+                                                        <input type="checkbox" id="device4-room2" onclick="saveClickBox('#device4-room2');">
+                                                        <label for="device4-room2"></label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- </fieldset> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </fieldset>
         </div>
     </div>
     <!--   Core JS Files   -->
@@ -219,16 +223,16 @@
     <!--  Chartist Plugin  -->
     <!-- <script src="../assets/js/plugins/chartist.min.js"></script> -->
     <!--  Notifications Plugin    -->
-    <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- <script src="../assets/js/plugins/bootstrap-notify.js"></script> -->
     <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
-    <script src="../assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
+    <!-- <script src="../assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script> -->
     <!-- socket.io -->
     <script src="../socket.io/socket.io.js"></script>
 
     <script>
         var socket = io.connect();
         // socket.emit("client-send-data", "hello")
-        function checkState(id) {
+        function get_button_status(id) {
             var checkbox = document.getElementById(id);
             if (checkbox.checked) {
                 socket.emit("client-send-data", "on")
@@ -240,19 +244,27 @@
 
     <!-- save state of button -->
     <script>
-        var i, checkboxes = document.querySelectorAll('input[type=checkbox]');
+        //get all id of type checkbox
+        var ids = $("fieldset :checkbox").map(function () {
+            return this.id;
+        }).get();
 
-        function save() {
-            for (i = 0; i < checkboxes.length; i++) {
-                localStorage.setItem(checkboxes[i].value, checkboxes[i].checked);
-            }
-        }
+        //luu trang thai moi khi nhan nut
+        function saveClickBox(id) {
+			let checkBox_status = $(id).is(":checked");
+			localStorage.setItem(id, checkBox_status);//key id, value check status
+			// $("#msg").text("Checkbox is checked: " + $(id).is(":checked"));
+		}
 
-        function _load() {
-            for (i = 0; i < checkboxes.length; i++) {
-                checkboxes[i].checked = localStorage.getItem(checkboxes[i].value) === 'true' ? true : false;
-            }
-        }
+        //load lai trang thai da luu khi reload page
+		function onReady() {
+			ids.forEach(function(id_value){
+				var id = '#'+id_value;
+				let get_checkBox_status = "true" == localStorage.getItem(id);
+				$(id).prop('checked', get_checkBox_status);
+			});
+		}
+        $(document).ready(onReady);
     </script>
 
     <!-- local time -->
