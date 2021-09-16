@@ -95,8 +95,7 @@ client.on('message', function (topic, message, packet) {//create a listener for 
             if (result.length == 1) {
                 console.log("Insert into Database")
                 var n = new Date()
-                var month = n.getMonth() + 1
-                var Date_and_Time = n.getFullYear() + "-" + month + "-" + n.getDate() + " " + n.getHours() + ":" + n.getMinutes() + ":" + n.getSeconds();
+                var Date_and_Time = n.getFullYear() + "-" + (n.getMonth() + 1) + "-" + (n.getDate() + 1) + " " + (n.getHours() - 17) + ":" + n.getMinutes() + ":" + n.getSeconds();
 
                 var sql = "INSERT INTO sensors (Time, Temperature, Humidity, Lux) VALUES ('" + Date_and_Time.toString() + "', '" + newTemp + "', '" + newHumi + "', '" + newLux + "')"
                 con.query(sql, function (err, result) {
