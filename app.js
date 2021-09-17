@@ -95,6 +95,7 @@ client.on('message', function (topic, message, packet) {//create a listener for 
             if (result.length == 1) {
                 console.log("Insert into Database")
                 // current date
+                let date_ob = new Date();
                 // adjust 0 before single digit date
                 let date = ("0" + date_ob.getDate()).slice(-2);
                 // current month
