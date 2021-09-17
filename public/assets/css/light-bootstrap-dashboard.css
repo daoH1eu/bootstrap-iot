@@ -601,6 +601,7 @@ body>.navbar-collapse:after {
 body>.navbar-collapse[data-image]:after,
 body>.navbar-collapse.has-image:after {
     opacity: .77;
+    /* background: #b091b4; */
 }
 
 .sidebar[data-color="black"]:after,
@@ -5313,6 +5314,5 @@ License - nucleoapp.com/license/
 .nc-zoom-split::before {
     content: "\ea64";
 }
-
 
 /* all icon font classes list here */

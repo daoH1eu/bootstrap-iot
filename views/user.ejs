@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,10 +22,10 @@
     <div class="wrapper">
         <div class="sidebar" data-image="../assets/img/sidebar-3.jpg" data-color="purple">
             <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+            Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
-        Tip 2: you can also add an image using data-image tag
-    -->
+            Tip 2: you can also add an image using data-image tag
+            -->
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="/" class="simple-text">
@@ -63,16 +63,16 @@
         </div>
         <div class="main-panel">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+            <nav class="navbar navbar-expand-lg" color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/user">Control Center</a>
+                    <a class="navbar-brand" href="/user">My Control Center</a>
                     <!-- <div class="collapse navbar-collapse justify-content-end" id="navigation"> -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="https://time.is" target="_blank">
-                                    <p>
-                                        <b>Local time:</b>&nbsp;<span id="rtc"> </span>
-                                        <i class="nc-icon nc-square-pin"></i>
+                                <p>
+                                    <b>Local time:</b>&nbsp;<span id="rtc"> </span>
+                                    <i class="nc-icon nc-square-pin"></i>
                                 </p>
                             </a>
                         </li>
@@ -81,11 +81,11 @@
                 </div>
             </nav>
             <!-- End Navbar -->
-            <fieldset>
-                <div class="content">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md">
+                            <fieldset>
                                 <div class="card">
                                     <div class="card-header">
                                         <!-- <h4 class="card-title text-center"> -->
@@ -101,7 +101,8 @@
                                                         <span>Thiết bị 1</span>
                                                     </div>
                                                     <div class="switch-toggle">
-                                                        <input type="checkbox" id="device1" onclick="saveClickBox('#device1');get_button_status(id);">
+                                                        <input type="checkbox" id="device1"
+                                                            onclick="saveClickBox('#device1');get_button_status(id);">
                                                         <label for="device1"></label>
                                                     </div>
                                                 </div>
@@ -112,7 +113,8 @@
                                                         <span>Thiết bị 2</span>
                                                     </div>
                                                     <div class="switch-toggle">
-                                                        <input type="checkbox" id="device2" onclick="saveClickBox('#device2');">
+                                                        <input type="checkbox" id="device2"
+                                                            onclick="saveClickBox('#device2');">
                                                         <label for="device2"></label>
                                                     </div>
                                                 </div>
@@ -123,7 +125,8 @@
                                                         <span>Thiết bị 3</span>
                                                     </div>
                                                     <div class="switch-toggle">
-                                                        <input type="checkbox" id="device3" onclick="saveClickBox('#device3');">
+                                                        <input type="checkbox" id="device3"
+                                                            onclick="saveClickBox('#device3');">
                                                         <label for="device3"></label>
                                                     </div>
                                                 </div>
@@ -134,7 +137,8 @@
                                                         <span>Thiết bị 4</span>
                                                     </div>
                                                     <div class="switch-toggle">
-                                                        <input type="checkbox" id="device4" onclick="saveClickBox('#device4');">
+                                                        <input type="checkbox" id="device4"
+                                                            onclick="saveClickBox('#device4');">
                                                         <label for="device4"></label>
                                                     </div>
                                                 </div>
@@ -142,10 +146,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md">
                                 <div class="card">
                                     <div class="card-header">
                                         <!-- <h4 class="card-title text-center"> -->
@@ -153,7 +153,6 @@
                                             <b>Room - 2</b>
                                         </p>
                                     </div>
-                                    <!-- <fieldset> -->
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-3">
@@ -162,9 +161,9 @@
                                                         <span>Thiết bị 1</span>
                                                     </div>
                                                     <div class="switch-toggle">
-                                                        <input type="checkbox" id="device1-room2"
-                                                            onclick="saveClickBox('#device2');get_button_status(id);" >
-                                                        <label for="device1-room2"></label>
+                                                        <input type="checkbox" id="device1-r2"
+                                                            onclick="saveClickBox('#device1-r2');get_button_status(id);">
+                                                        <label for="device1-r2"></label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -174,8 +173,9 @@
                                                         <span>Thiết bị 2</span>
                                                     </div>
                                                     <div class="switch-toggle">
-                                                        <input type="checkbox" id="device2-room2" onclick="saveClickBox('#device2-room2');">
-                                                        <label for="device2-room2"></label>
+                                                        <input type="checkbox" id="device2-r2"
+                                                            onclick="saveClickBox('#device2-r2');">
+                                                        <label for="device2-r2"></label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -185,8 +185,9 @@
                                                         <span>Thiết bị 3</span>
                                                     </div>
                                                     <div class="switch-toggle">
-                                                        <input type="checkbox" id="device3-room2" onclick="saveClickBox('#device3-room2');">
-                                                        <label for="device3-room2"></label>
+                                                        <input type="checkbox" id="device3-r2"
+                                                            onclick="saveClickBox('#device3-r2');">
+                                                        <label for="device3-r2"></label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -196,20 +197,51 @@
                                                         <span>Thiết bị 4</span>
                                                     </div>
                                                     <div class="switch-toggle">
-                                                        <input type="checkbox" id="device4-room2" onclick="saveClickBox('#device4-room2');">
-                                                        <label for="device4-room2"></label>
+                                                        <input type="checkbox" id="device4-r2"
+                                                            onclick="saveClickBox('#device4-r2');">
+                                                        <label for="device4-r2"></label>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- </fieldset> -->
                                 </div>
-                            </div>
+                            </fieldset>
                         </div>
                     </div>
                 </div>
-            </fieldset>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav>
+                        <ul class="footer-menu">
+                            <li>
+                                <a href="/">
+                                    Home Page
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/user">
+                                    Control center
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/history">
+                                    History
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-center">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            SV - Đào Minh Hiếu &nbsp;
+                            <a href="http://www.creative-tim.com"> Nguồn tham khảo</a>
+                        </p>
+                    </nav>
+                </div>
+            </footer>
         </div>
     </div>
     <!--   Core JS Files   -->
@@ -251,18 +283,18 @@
 
         //luu trang thai moi khi nhan nut
         function saveClickBox(id) {
-			let checkBox_status = $(id).is(":checked");
-			localStorage.setItem(id, checkBox_status);//key id, value check status
-		}
+            let checkBox_status = $(id).is(":checked");
+            localStorage.setItem(id, checkBox_status);//key id, value check status
+        }
 
         //load lai trang thai da luu khi reload page
-		function onReady() {
-			ids.forEach(function(id_value){
-				var id = '#'+id_value;
-				let get_checkBox_status = "true" == localStorage.getItem(id);
-				$(id).prop('checked', get_checkBox_status);//set property "checked" of type check box (true/checked of false/not check)
-			});
-		}
+        function onReady() {
+            ids.forEach(function (id_value) {
+                var id = '#' + id_value;
+                let get_checkBox_status = "true" == localStorage.getItem(id);
+                $(id).prop('checked', get_checkBox_status);//set property "checked" of type check box (true/checked of false/not check)
+            });
+        }
         $(document).ready(onReady);//call back to onReady func
     </script>
 
