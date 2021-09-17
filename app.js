@@ -54,7 +54,7 @@ var con = mysql.createConnection({
 
 //---------------------------------------------CREATE TABLE in MySQL-------------------------------------------------
 var checkTable = "show tables like 'sensors';"
-function createTable(){
+function createTable() {
     con.connect(function (err) {
         if (err) throw err;
         console.log("MySQL CONNECTED");
@@ -65,7 +65,7 @@ function createTable(){
             console.log("Table CREATED");
         });
     })
-} 
+}
 
 // //---------------------------------------- MQTT -> SQL --------------------------------------------
 var humi_graph = [];
@@ -94,8 +94,21 @@ client.on('message', function (topic, message, packet) {//create a listener for 
             if (err) throw err;
             if (result.length == 1) {
                 console.log("Insert into Database")
-                var n = new Date()
-                var Date_and_Time = n.getFullYear() + "-" + (n.getMonth() + 1) + "-" + (n.getDate() + 1) + " " + (n.getHours() - 17) + ":" + n.getMinutes() + ":" + n.getSeconds();
+                // current date
+                // adjust 0 before single digit date
+                let date = ("0" + date_ob.getDate()).slice(-2);
+                // current month
+                let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+                // current year
+                let year = date_ob.getFullYear();
+                // current hours
+                let hours = date_ob.getHours();
+                // current minutes
+                let minutes = date_ob.getMinutes();
+                // current seconds
+                let seconds = date_ob.getSeconds();
+                // prints date in YYYY-MM-DD format
+                var Date_and_Time = year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
 
                 var sql = "INSERT INTO sensors (Time, Temperature, Humidity, Lux) VALUES ('" + Date_and_Time.toString() + "', '" + newTemp + "', '" + newHumi + "', '" + newLux + "')"
                 con.query(sql, function (err, result) {
@@ -121,7 +134,7 @@ client.on('message', function (topic, message, packet) {//create a listener for 
                     io.sockets.emit("server-update-graph", { date_graph, temp_graph, humi_graph, lux_graph });
                 });
             }
-            else{
+            else {
                 console.log("Table doesn't exist, create a table");
                 createTable()
             }
@@ -131,8 +144,7 @@ client.on('message', function (topic, message, packet) {//create a listener for 
 
 //----Socket-------------------------------------
 io.on('connection', function (socket) {
-    socket.on("disconnect", function()
-    {
+    socket.on("disconnect", function () {
     });
 
     socket.on("client-send-data", function (data) {
@@ -141,7 +153,7 @@ io.on('connection', function (socket) {
             console.log("Bật")
             client.publish("led", 'on');
         }
-        else if (data == "off"){
+        else if (data == "off") {
             console.log("Tắt")
             client.publish("led", 'off');
         }
@@ -180,9 +192,9 @@ io.on('connection', function (socket) {
                 socket.emit("server-update-graph", { date_graph, temp_graph, humi_graph, lux_graph });
             });
         }
-        else{
+        else {
             console.log("Table doesn't exist, create a table");
             createTable()
-        }   
+        }
     })
 })
