@@ -253,7 +253,6 @@
         function saveClickBox(id) {
 			let checkBox_status = $(id).is(":checked");
 			localStorage.setItem(id, checkBox_status);//key id, value check status
-			// $("#msg").text("Checkbox is checked: " + $(id).is(":checked"));
 		}
 
         //load lai trang thai da luu khi reload page
@@ -261,10 +260,10 @@
 			ids.forEach(function(id_value){
 				var id = '#'+id_value;
 				let get_checkBox_status = "true" == localStorage.getItem(id);
-				$(id).prop('checked', get_checkBox_status);
+				$(id).prop('checked', get_checkBox_status);//set property "checked" of type check box (true/checked of false/not check)
 			});
 		}
-        $(document).ready(onReady);
+        $(document).ready(onReady);//call back to onReady func
     </script>
 
     <!-- local time -->

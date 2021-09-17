@@ -97,9 +97,9 @@ client.on('message', function (topic, message, packet) {//create a listener for 
                 // current date
                 let date_ob = new Date();
                 // adjust 0 before single digit date
-                let date = ("0" + date_ob.getDate()).slice(-2);
+                let date = date_ob.getDate();
                 // current month
-                let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+                let month = date_ob.getMonth() + 1;
                 // current year
                 let year = date_ob.getFullYear();
                 // current hours
