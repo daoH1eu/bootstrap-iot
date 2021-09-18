@@ -84,6 +84,8 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md">
+                            <!-- loading icon -->
+                            <div id="loading"> </div>
                             <div class="card strpied-tabled-with-hover">
                                 <div class="card-header ">
                                     <h4 class="card-title">History Table</h4>
@@ -112,7 +114,7 @@
                                         <tbody>
                                             <tr>
                                                 <td id="id-content"> </td>
-                                                <td id="time-content" style="background-color:lightgray;"> </td>
+                                                <td id="time-content" style="background-color: lightgray;"> </td>
                                                 <td id="temper-content"> </td>
                                                 <td id="humi-content" style="background-color: lightgray;"> </td>
                                                 <td id="lux-content"> </td>
@@ -188,6 +190,13 @@
             $("#humi-content").append("<p>" + element.humi + "</p>")
             $("#lux-content").append("<p>" + element.lux + "</p>")
         });
+    });
+</script>    
+
+<!-- loader icon -->
+<script>
+    $(document).ready(function() {
+        $("#loading").fadeOut("slow");
     });
 </script>
 
